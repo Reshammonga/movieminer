@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Reshammonga/movieminer/static/css/main.f855e6bc.css",
+    "main.js": "/Reshammonga/movieminer/static/js/main.7e5cdc2a.js",
+    "static/js/453.398d4b62.chunk.js": "/Reshammonga/movieminer/static/js/453.398d4b62.chunk.js",
+    "index.html": "/Reshammonga/movieminer/index.html",
+    "main.f855e6bc.css.map": "/Reshammonga/movieminer/static/css/main.f855e6bc.css.map",
+    "main.7e5cdc2a.js.map": "/Reshammonga/movieminer/static/js/main.7e5cdc2a.js.map",
+    "453.398d4b62.chunk.js.map": "/Reshammonga/movieminer/static/js/453.398d4b62.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.7e5cdc2a.js"
+  ]
+}
