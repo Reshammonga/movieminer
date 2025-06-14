@@ -49,7 +49,7 @@ function Navbar({ setsearchItem }) {
                 placeholder="Search"
                 aria-label="Search"
               />
-              <button className="btn btn-outline-success" type="submit">
+              <button className="btn btn-light" type="submit">
                 Search
               </button>
             </form>

@@ -14,7 +14,7 @@ function App() {
        <Navbar setsearchItem={setsearchItem}></Navbar>
 <Routes>
   <Route exact path="/" element={<MovieList searchItem={searchItem}></MovieList>}></Route>
-    <Route exact path="/favs" element={<Favourites></Favourites>}></Route>
+    <Route exact  path="/favs" element={<Favourites searchItem={searchItem} ></Favourites>}></Route>
 </Routes>
      
 

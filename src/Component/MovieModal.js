@@ -53,8 +53,10 @@ function MovieModal({movieId,onClose,onRemove}) {
     <div style={modalStyle}>
         <div style={modalContent}>
           <div>
-            <button type="button" style={closebtn} onClick={onClose} class="btn-close" aria-label="Close"></button>
-            <button onClick={handleToggleFav} className="btn btn-dark" style={addtofavBtn}>{isFav ? <i class="fa-regular fa-star"></i>:'⭐'}</button>
+           <button type="button" style={closebtn} onClick={onClose} className="btn-close" aria-label="Close"></button>
+<button onClick={handleToggleFav} className="btn btn-dark" style={addtofavBtn}>
+  {isFav ?  '⭐':<i className="fa-regular fa-star"></i>}
+</button>
             </div>
             <div>
             <h2>{movieData.title}</h2>

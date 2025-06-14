@@ -15,13 +15,18 @@ const bottomRef = useRef(null);
 useEffect(() => {
 if(searchItem.trim()){
   searchMovies(searchItem);
-}else{
-  setMovieList([]);
-  setpage(1);
-  setisSearching(false);
-  fetchMovies(1);
 }
  // eslint-disable-next-line
+}, [searchItem]);
+
+useEffect(() => {
+  if (!searchItem.trim()) {
+    setMovieList([]);
+    setpage(1);
+    setisSearching(false);
+    fetchMovies(1);  // refetch on clear
+  }
+  // eslint-disable-next-line
 }, [searchItem]);
 
 const searchMovies=async (search)=>{
@@ -90,13 +95,19 @@ const searchMovies=async (search)=>{
       {error && <p>{error}</p>}
 
       <div className="row">
+              {movieList.length===0 && !loading && (
+        <div className='text-center w-100 mt-5'>
+          <h5>{isSearching ?`No results found for ${searchItem}`:"No movies Found "}</h5>
+           <p>{isSearching ? "Try a different keyword." : "Please try again later."}</p>
+          </div>
+      )}
         {movieList.map((movie) => (
           <div key={movie.id} className="col-md-3 col-sm-6 mb-4 text-center">
             <img
             onClick={()=>setselectedMovieID(movie.id)}
               src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
               alt={movie.title}
-              style={{ width: '150px', borderRadius: '10px' }}
+              style={{ width: '250px', borderRadius: '5px' }}
             />
             <p className="mt-2" style={{ fontSize: '14px' }}>{movie.title}</p>
           </div>
@@ -112,6 +123,8 @@ const searchMovies=async (search)=>{
       {
         selectedMovieID && (<MovieModal movieId={selectedMovieID}   onClose={()=>setselectedMovieID(null)}></MovieModal>)
       }
+
+
     </div>
   );
 }
